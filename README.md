@@ -34,6 +34,14 @@ Function is the same as version 1 but defined SecurityFilterChain
 #### Run - Console - Check Logs
 2024-05-09 11:30:14.086 DEBUG 2532 --- [nio-8081-exec-5] o.s.web.client.RestTemplate              : HTTP POST https://dev-25781967.okta.com/oauth2/default/v1/introspect
 
+## Version 4
+### Get -> JWT Token; Post -> Opaque Token
+### AuthenticationManagerResolver
+### RequestMatcherDelegatingAuthenticationManagerResolver
+### .oauth2ResourceServer - authenticationManagerResolver
+#### Terminal
+http :8081/ "Authorization: Bearer $env:TOKEN" <br>
+http --form :8081/ "Authorization: Bearer $env:TOKEN" "message=YouTube"
 
 
 ## Reference
