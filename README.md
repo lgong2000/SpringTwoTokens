@@ -23,6 +23,18 @@ Function is the same as version 1 but defined SecurityFilterChain
 ### SecurityFilterChain
 ### oauth2ResourceServer with OAuth2ResourceServerConfigurer::jwt
 
+## Version 3
+### Opaque Token - No Cache, ask from the sever every request
+#### Terminal
+1. $env:TOKEN='......' - Set the token getting from Spring Token View <br>
+   http :8081/ "Authorization: Bearer $env:TOKEN" - HTTP/1.1 200 ......
+#### Run - Console - Check Logs - HTTP GET the token
+2024-05-09 11:21:52.844 DEBUG 2532 --- [nio-8081-exec-3] o.s.web.client.RestTemplate              : HTTP POST https://dev-25781967.okta.com/oauth2/default/v1/introspect <br>
+2. Run 2. again
+#### Run - Console - Check Logs
+2024-05-09 11:30:14.086 DEBUG 2532 --- [nio-8081-exec-5] o.s.web.client.RestTemplate              : HTTP POST https://dev-25781967.okta.com/oauth2/default/v1/introspect
+
+
 
 ## Reference
 ### JWT Decode
